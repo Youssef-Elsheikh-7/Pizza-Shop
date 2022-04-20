@@ -1,0 +1,665 @@
+:root {
+    --main-color: #e74c3c;
+    --sec-color: #333;
+    --white: #fff;
+    --icon-color: #666;
+    --alt-color: #f5f5f5;
+    --main-padding: 100px;
+    --main-transition: 0.3s;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f5f5f5;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+/* small */
+
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+
+/* medium */
+
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+
+/* large */
+
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+
+/* main title */
+
+.main-title {
+    font-size: 50px;
+    color: var(--sec-color);
+    font-weight: 700;
+    display: block;
+    margin: 0 auto 20px;
+    width: fit-content;
+    text-transform: uppercase;
+}
+
+
+/* end title */
+
+
+/* start header */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 12px 0 #c5c5c5;
+    width: 100%;
+    min-height: 57px;
+    background-color: var(--white);
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.header .container .logo {
+    font-size: 30px;
+    color: var(--sec-color);
+}
+
+.header .container .logo span {
+    color: var(--main-color);
+}
+
+.header .container .links ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    order: 1;
+}
+
+.header .container .links ul li:hover a {
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
+.header .container .links ul li a {
+    padding: 10px;
+    font-size: 20px;
+    color: var(--sec-color);
+    transition: var(--main-transition);
+    margin-right: 5px;
+}
+
+.header .container .icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    order: 2;
+}
+
+.header .container .links .toggle,
+.header .container .icons .user,
+.header .container .icons .order,
+.header .container .icons .shopping {
+    position: relative;
+    color: var(--icon-color);
+    font-size: 1.6em;
+    margin-left: 2em;
+    cursor: pointer;
+}
+
+.header .container .icons .user::before,
+.header .container .icons .order::before,
+.header .container .icons .shopping::before {
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    font-weight: 900;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.2s;
+}
+
+.header .container .icons .user::before {
+    content: "\f007";
+}
+
+.header .container .icons .order::before {
+    content: "\f466";
+}
+
+.header .container .icons .shopping::before {
+    content: "\f07a";
+}
+
+.header .container .icons>div:hover::before {
+    color: var(--main-color);
+}
+
+.header .container .links .toggle {
+    transition: var(--main-transition);
+}
+
+.header .container .links .toggle:hover {
+    color: var(--main-color);
+}
+
+@media (min-width:768px) {
+    .header .container .links .toggle {
+        display: none;
+    }
+}
+
+@media (max-width:767px) {
+    .header .container .links {
+        flex: 1;
+        text-align: right;
+    }
+    .header .container .links ul {
+        display: none;
+    }
+    .header .container .toggle:hover+ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 15px;
+        background-color: var(--white);
+    }
+    .header .container .links ul li {
+        padding: 10px;
+        margin-bottom: 5px;
+        background-color: #eee;
+        display: block;
+        width: 100%;
+        border-radius: 5px;
+        text-align: left;
+    }
+}
+
+
+/* end header */
+
+
+/* start landing */
+
+.landing {
+    padding: 2em;
+    background-image: url(/images/home-bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.landing .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.landing .image img {
+    width: 100%;
+}
+
+.landing .container .text {
+    text-align: center;
+}
+
+.landing .container .text h2 {
+    font-size: 65px;
+    color: var(--white);
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+@media (max-width:767px) {
+    .landing .container {
+        flex-direction: column;
+    }
+    .landing .container .text h2 {
+        font-size: 55px;
+    }
+}
+
+.landing .container .text .left,
+.landing .container .text .right {
+    background-color: var(--white);
+    color: var(--sec-color);
+    padding: 15px;
+    border-radius: 6px;
+    transition: var(--main-transition);
+    margin-right: 5px;
+}
+
+.landing .container .text .right:hover,
+.landing .container .text .left:hover {
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+
+/* end landing */
+
+
+/* start about */
+
+.about {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.about .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.about .container .box {
+    box-shadow: 0 2px 15px 0 #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.about .container .box img {
+    max-width: 100%;
+}
+
+.about .container .box h3 {
+    font-size: 23px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: var(--sec-color);
+}
+
+.about .container .box p {
+    line-height: 1.6;
+    color: var(--icon-color);
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.about .container .box a {
+    color: var(--white);
+    background-color: var(--main-color);
+    padding: 10px 100px;
+    border-radius: 10px;
+    transition: var(--main-transition);
+    display: block;
+    width: fit-content;
+    margin: 25px auto;
+    font-size: 18px;
+}
+
+.about .container .box a:hover {
+    background-color: var(--sec-color);
+    color: var(--white);
+}
+
+
+/* end about */
+
+
+/* start menu */
+
+.menu {
+    padding-bottom: var(--main-padding);
+}
+
+.menu .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.menu .container .box {
+    position: relative;
+    box-shadow: 0 2px 15px 0 #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: var(--white);
+}
+
+.menu .container .box .price {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.menu .container .box .price span {
+    font-size: 20px;
+}
+
+.menu .container .box img {
+    max-width: 100%;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.menu .container .box p {
+    margin: 15px auto;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    color: var(--sec-color);
+}
+
+.menu .container .box form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.menu .container .box form input {
+    padding: 13px 11px;
+    border-radius: 6px;
+    border: none;
+}
+
+.menu .container .box form input[type="number"] {
+    border: 1px solid var(--sec-color);
+    margin-right: 5px;
+}
+
+.menu .container .box form input[type="number"]:focus {
+    outline: none;
+}
+
+.menu .container .box form input[type="submit"] {
+    flex: 1;
+    color: var(--white);
+    background-color: var(--main-color);
+    font-size: 18px;
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+
+.menu .container .box form input[type="submit"]:hover {
+    background-color: var(--sec-color);
+}
+
+
+/* end menu */
+
+
+/* start order */
+
+.order .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order .container .main-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 6px;
+}
+
+.order .container .main-box .moun {
+    display: flex;
+    padding: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    gap: 30px;
+    justify-content: center;
+    background-color: var(--alt-color);
+    width: 100%;
+    border-radius: 6px;
+}
+
+.order .container .main-box .moun p {
+    padding: 15px 30px;
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    box-shadow: 0 2px 12px #ddd;
+    font-size: 18px;
+    color: var(--sec-color);
+}
+
+.order .container .main-box .moun p span {
+    color: var(--main-color);
+}
+
+.order .container .form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: space-between;
+}
+
+.order .container .form .input-box {
+    width: 47%;
+}
+
+@media (max-width:767px) {
+    .order .container .form .input-box {
+        width: 100%;
+    }
+}
+
+.order .container .form span {
+    display: block;
+    margin-bottom: 10px;
+    color: #777;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.order .container .form .box {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: var(--alt-color);
+    border: none;
+    border-radius: 6px;
+}
+
+.order .container .form .box:focus {
+    outline: none;
+}
+
+.order .container a {
+    display: block;
+    margin: 30px auto 0;
+    background-color: var(--main-color);
+    color: var(--white);
+    padding: 15px 20px;
+    width: 100%;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 18px;
+    transition: var(--main-transition);
+}
+
+.order .container a:hover {
+    background-color: var(--sec-color);
+}
+
+
+/* end order */
+
+
+/* start fqa */
+
+.fqa {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.fqa .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.fqa .container .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    color: var(--white);
+    background-color: var(--sec-color);
+    max-width: 700px;
+    width: 100%;
+    transition: var(--main-transition);
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.fqa .container .box .hover-box {
+    flex-basis: 100%;
+    margin: 10px auto 10px;
+    display: none;
+    transition: var(--main-transition);
+}
+
+.fqa .container .box p {
+    font-size: 18px;
+}
+
+.fqa .container .box i {
+    font-size: 18px;
+    transition: var(--main-transition);
+}
+
+.fqa .container .box:hover {
+    background-color: var(--main-color);
+}
+
+.fqa .container .box:hover .hover-box {
+    display: block;
+}
+
+.fqa .container .box:hover i {
+    transform: rotate(180deg);
+}
+
+
+/* end fqa */
+
+
+/* start work */
+
+.work .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.work .container .box {
+    min-height: 216px;
+    background-color: var(--white);
+    box-shadow: 0 2px 12px 0 #eee;
+    text-align: center;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.work .container .box .icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    color: var(--white);
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.work .container .box h3 {
+    color: var(--sec-color);
+    margin: 20px auto;
+}
+
+.work .container .box span {
+    color: #777;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+/* end work */
+
+
+/* start footer */
+
+.footer {
+    margin: 50px 0 30px;
+    border-top: 1px solid var(--sec-color);
+}
+
+.footer .container {
+    text-align: center;
+}
+
+.footer .container .text {
+    font-size: 18px;
+    color: var(--sec-color);
+    margin: 20px auto;
+}
+
+.footer .container .text span {
+    color: red;
+    font-size: 25px;
+}
+
+
+/* end footer */
