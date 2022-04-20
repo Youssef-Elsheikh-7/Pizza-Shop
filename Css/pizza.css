@@ -464,7 +464,7 @@ a {
 
 .order .container .main-box .moun p {
     padding: 15px 30px;
-    background-color: #f6f6f6;
+    background-color: var(--white);
     border-radius: 5px;
     box-shadow: 0 2px 12px #ddd;
     font-size: 18px;
