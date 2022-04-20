@@ -232,7 +232,7 @@ a {
 
 .landing {
     padding: 2em;
-    background-image: url(./images/home-bg.jpg);
+    background-image: url(../images/home-bg.jpg);
     background-size: cover;
     background-position: center;
 }
